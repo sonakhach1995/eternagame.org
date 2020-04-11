@@ -1,6 +1,10 @@
 <template>
   <div style="overflow:hidden; margin-top: 120px;">
     <b-container class="page-container">
+      <b-col class="eterna_header" cols="12" lg="9" v-if="header_title && header_date">
+        <h3>{{header_title}}</h3>
+        <p>{{header_date}}</p>
+    </b-col>
       <h2 class="page-title" v-if="title">
         <b>{{title}}</b>
         <div class="d-lg-none">
@@ -8,7 +12,7 @@
         </div>
       </h2>
       <b-row>
-        <b-col cols="12" lg="9" class="body" v-if="hasSidebarSlot">
+        <b-col cols="12" lg="9" class="body content_box" v-if="hasSidebarSlot">
           <slot></slot>
         </b-col>
         <b-col class="body" v-if="!hasSidebarSlot">
@@ -41,6 +45,12 @@
   export default class EternaPage extends Vue {
     @Prop()
     title!: string;
+
+    @Prop()
+    header_title!: string;
+
+    @Prop()
+    header_date!: string;
 
     $refs!: {
       mobileSidebar: MobileSidebar;
@@ -94,10 +104,12 @@
     display: flex;
   }
   .page-title {
+    width: 850px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 2.25rem;
+    margin-bottom: 20px;
   }
   .sidebar {
     font-size: 0.875rem;

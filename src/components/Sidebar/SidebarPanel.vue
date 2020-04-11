@@ -1,7 +1,7 @@
 <template>
   <div :class="{panel: isInSidebar, toggler: !isInSidebar}">
     <div class="sidebar-panel-header" :style="headerStyle" @click.stop="clickedHeader">
-      <img :src="headerIcon" class="header-icon"/>
+      <img v-if="headerIcon" :src="headerIcon" class="header-icon"/>
       <span :class="headerTextClasses">{{header}}</span>
     </div>
     <template v-if="isInSidebar">
@@ -28,7 +28,7 @@
     @Prop({ required: true })
     private header!: string;
 
-    @Prop({ required: true })
+    @Prop()
     private headerIcon!: string;
 
     get headerTextClasses() {
@@ -53,6 +53,7 @@
 }
 
 .panel {
+  padding-top: 43px;
   margin-bottom: 40px;
   width: 100%;
   .sidebar-panel-header {

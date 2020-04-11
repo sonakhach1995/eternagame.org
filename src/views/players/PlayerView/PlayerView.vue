@@ -94,7 +94,6 @@
       { value: 'synthesized', text: 'Synthesized RNAs' },
       { value: 'latest', text: 'Latest Activity' },
       { value: 'created', text: 'Created Puzzles' },
-      { value: 'resources', text: 'Resources' },
     ];
 
     private picture: string = `${process.env.VUE_APP_API_BASE_URL}/sites/default/files/pictures/picture-133043.png`;

@@ -1,8 +1,12 @@
 <template>
-  <EternaPage v-if="lab" title="Quest Info">
+  <EternaPage title="Best Lab Practices">
+
     <template #sidebar="{ isInSidebar }">
-      <LabInfoPanel :lab="lab" :isInSidebar="isInSidebar" />
-      <TagsPanel :tags="['#Switch', '#Ribosome']" :isInSidebar="isInSidebar" />
+      <SidebarPanel isInSidebar="true" headerIcon="" header="COLLECTION INFO">
+      <!--Content goes here -->
+      </SidebarPanel>
+<!--      <LabInfoPanel :lab="lab" :isInSidebar="isInSidebar" />-->
+      <TagsPanel :tags="['#Switch', '#Ribosome', '##XOR', '#MS2', '#FMN', '#Telomerase']" :isInSidebar="isInSidebar" />
     </template>
   </EternaPage>
 </template>

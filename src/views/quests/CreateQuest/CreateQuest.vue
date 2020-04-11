@@ -1,8 +1,23 @@
 <template>
   <EternaPage title="Create Quest">
     <template #sidebar="{ isInSidebar }">
-      <LabInfoPanel :lab="lab" :isInSidebar="isInSidebar" />
-      <TagsPanel :tags="['#Switch', '#Ribosome']" :isInSidebar="isInSidebar" />
+<!--      <LabInfoPanel :lab="lab" :isInSidebar="isInSidebar" />-->
+      <SidebarPanel header="TIPS & RESOURCES" isInSidebar="true">
+        <div>
+          <b>Lectus a mollis volutpat elementum</b>
+          <p>Malesuada ullamcorper a interdum a volutpat dui vestibulum semper ornare inceptos mus iaculis eleifend.</p>
+        </div>
+        <div>
+          <b>Eu sodales turpis </b>
+          <p>Dignissim hendrerit eleifend id nam nunc augue duis id a interdum mattis lectus nec proin.</p>
+        </div>
+        <div>
+          <b>Adipiscing metus </b>
+          <p>auctor cum nisl consectetur mi ridiculus iaculis id phasellus fermentum posuere a curabitur faucibus porttitor aptent fringilla arcu a bibendum in ut parturient sit.</p>
+        </div>
+
+
+      </SidebarPanel>
     </template>
   </EternaPage>
 </template>

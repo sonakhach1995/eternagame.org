@@ -1,5 +1,5 @@
 <template>
-  <EternaPage title="Activity Feed">
+  <EternaPage title="Latest Activity">
     <Gallery :sm="12" :md="12"> </Gallery>
     <template #sidebar="{ isInSidebar }">
       <DropdownSidebarPanel
@@ -56,10 +56,9 @@
     private tags: String[] = ['#Ribosome', '#XOR', '#MS2', '#tRNA', '#mRNA'];
 
     private options: Option[] = [
-      { value: 'all', text: 'All Categories' },
-      { value: 'announcements', text: 'Announcements' },
-      { value: 'blogs', text: 'Blogs' },
-      { value: 'labs', text: 'Labs' },
+      { value: 'all', text: 'All Activity' },
+      { value: 'mygroup', text: 'My Groups (3)' },
+      { value: 'messages', text: 'My Messages (1)' },
     ];
   }
 </script>
