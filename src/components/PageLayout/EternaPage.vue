@@ -7,11 +7,12 @@
       </b-col>
       <h2 class="page-title" v-if="title">
         <b>{{ title }}</b>
-        <div class="d-lg-none">
+        <div class="sidebar_line d-lg-none">
           <slot name="sidebar" :isInSidebar="false"></slot>
         </div>
       </h2>
       <b-row>
+        <div class="first_content">
         <b-col cols="12" lg="9" class="body" v-if="hasSidebarSlot">
           <slot></slot>
         </b-col>
@@ -21,6 +22,7 @@
         <b-col class="sidebar d-none d-lg-block" v-if="hasSidebarSlot">
           <slot name="sidebar" :isInSidebar="true"></slot>
         </b-col>
+        </div>
       </b-row>
       <MobileSidebar ref="mobileSidebar" v-if="hasSidebarSlot">
         <slot name="sidebar" :isInSidebar="true"></slot>
@@ -80,6 +82,10 @@
     position: relative;
     min-height: Calc(100vh - 120px);
     padding: 3rem 1.5rem 1.5rem;
+
+    .row {
+      margin: 0;
+    }
   }
   .page-container:before {
     box-shadow: -45px 0 45px -45px inset black;
@@ -108,6 +114,10 @@
     justify-content: space-between;
     align-items: center;
     font-size: 2.25rem;
+    width: 74%;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
   }
   .sidebar {
     font-size: 0.875rem;
@@ -119,7 +129,10 @@
     margin-bottom: 13px;
     border-bottom: 1px solid #043468;
     padding: 0 0 2px 0;
-    width: 850px;
+    width: 74%;
+    @media (max-width: 992px) {
+    width: 100%;
+    }
 
     h3 {
       font-size: 14px;
@@ -138,5 +151,31 @@
       color: #ffffff;
       margin: 0;
     }
+  }
+
+  .first_content {
+    display: flex;
+    width: 100%;
+
+    .body {
+      max-width: 74%;
+      width: 100%;
+      padding: 0;
+      @media (max-width: 992px) {
+        max-width: 100%;
+      }
+    }
+
+    .sidebar {
+      padding: 0 0 0 27px;
+      width: 25%;
+      @media (max-width: 1300px) {
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .sidebar_line {
+    display: flex;
   }
 </style>

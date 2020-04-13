@@ -8,6 +8,7 @@ selenium-debug.log
 # env files
 .env.local
 .env.*.local
+info.txt
 
 # Log files
 npm-debug.log*

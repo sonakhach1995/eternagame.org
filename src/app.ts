@@ -40,6 +40,7 @@ export default function createApp() {
 
   const http = axios.create({
     withCredentials: true,
+    baseURL: 'http://refresh.eternadev.org',
   });
 
   const { store, vxm } = createStore(http);
