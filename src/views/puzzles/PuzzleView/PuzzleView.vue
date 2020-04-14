@@ -1,9 +1,8 @@
 <template>
-  <EternaPage v-if="puzzle" title="Puzzle Details">
-    {{ puzzle }}
-    <template #sidebar="{ isInSidebar }">
-      <!--      <LabInfoPanel :lab="lab" :isInSidebar="isInSidebar" />-->
+  <EternaPage v-if="pageData" :title="pageData.puzzle.title">
+    <div class="page-content" v-html="pageData.puzzle.body"></div>
 
+    <template #sidebar="{ isInSidebar }">
       <TagsPanel :tags="['#SRP', '#easy']" :isInSidebar="isInSidebar" />
     </template>
   </EternaPage>
