@@ -1,5 +1,5 @@
 <template>
-  <b-modal
+  <b-modal modal-class="login_modal"
     id="modal-login"
     ref="modal"
     body-class="py-0"
@@ -14,31 +14,31 @@
         {{ errorMessage }}
       </b-alert>
     </transition>
-    <b-form @submit.prevent="login" class="pb-3">
+    <b-form @submit.prevent="login" class="login_modal_content">
+      <div class="input_bg">
       <b-input placeholder="username" v-model="form.username" required />
+        <span>
+          <img src="@/assets/front-page/img/noun_User.svg">
+        </span>
+      </div>
+      <div class="input_bg">
       <b-input type="password" placeholder="password" v-model="form.password" required />
-
+        <span class="lock">
+          <img src="@/assets/front-page/img/noun_Lock.svg">
+        </span>
+      </div>
+      <p class="forgot-password mt-0" @click="$bvModal.hide('modal-login')"
+         v-b-modal.modal-reset-password>
+        {{ $t('login-sub:main-action') }}
+      </p>
       <b-button type="submit" variant="primary" class="submit-button">{{
         $t('login-modal:main-action')
       }}</b-button>
-      <b-btn
-        class="forgot-password mt-0"
-        variant="secondary"
-        size="sm"
-        @click="$bvModal.hide('modal-login')"
-        v-b-modal.modal-reset-password
-      >
-        {{ $t('login-sub:main-action') }}
-      </b-btn>
-      <b-btn
-        class="forgot-password mt-0"
-        variant="secondary"
-        size="sm"
-        @click="$bvModal.hide('modal-login')"
-        v-b-modal.modal-register
-      >
+
+      <p class="register_here" @click="$bvModal.hide('modal-login')"
+        v-b-modal.modal-register >
         {{ $t('login-modal:register-action') }}
-      </b-btn>
+      </p>
     </b-form>
   </b-modal>
 </template>
@@ -83,9 +83,6 @@
 </script>
 
 <style scoped lang="scss">
-  .submit-button {
-    margin-top: 1.5rem;
-  }
 
   .fade-enter-active,
   .fade-leave-active {
@@ -95,4 +92,5 @@
   .fade-leave-to {
     opacity: 0;
   }
+
 </style>

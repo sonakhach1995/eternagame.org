@@ -1,5 +1,5 @@
 <template>
-  <b-modal
+  <b-modal modal-class="login_modal"
     id="modal-reset-password"
     ref="modal"
     body-class="py-0"
@@ -15,7 +15,7 @@
         {{ errorMessage }}
       </b-alert>
     </transition>
-    <b-form @submit.prevent="resetPassword" class="pb-3">
+    <b-form @submit.prevent="resetPassword" class="login_modal_content mt-3">
       <b-input placeholder="username or email" v-model="usernameOrEmail" required />
       <b-button type="submit" variant="primary" class="submit-button">{{
         $t('Send Reset Email')
