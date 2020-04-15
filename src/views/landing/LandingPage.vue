@@ -22,7 +22,6 @@
   })
   export default class LandingPage extends Vue {
     get loggedIn() {
-      return false;
       return this.$vxm.user.loggedIn;
     }
   }

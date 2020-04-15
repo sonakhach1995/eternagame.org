@@ -39,7 +39,6 @@
     };
 
     get loggedIn() {
-      return false;
       return this.$vxm.user.loggedIn;
     }
   }
