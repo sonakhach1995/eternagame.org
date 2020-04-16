@@ -13,7 +13,7 @@
       </h2>
       <b-row>
         <div class="first_content">
-        <b-col cols="12" lg="9" class="body" v-if="hasSidebarSlot">
+        <b-col cols="12" lg="9" class="body p-0" v-if="hasSidebarSlot">
           <slot></slot>
         </b-col>
         <b-col class="body" v-if="!hasSidebarSlot">
@@ -118,7 +118,11 @@
     @media (max-width: 992px) {
       width: 100%;
     }
+    @media (max-width: 375px) {
+      font-size: 1.75rem;
+    }
   }
+
   .sidebar {
     font-size: 0.875rem;
   }
@@ -127,7 +131,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 13px;
-    border-bottom: 1px solid #043468;
+    border-bottom: 1px solid $input-bg;
     padding: 0 0 2px 0;
     width: 74%;
     @media (max-width: 992px) {
@@ -148,7 +152,7 @@
       font-size: 14px;
       font-weight: bold;
       line-height: 1.36;
-      color: #ffffff;
+      color: $white;
       margin: 0;
     }
   }
@@ -156,15 +160,6 @@
   .first_content {
     display: flex;
     width: 100%;
-
-    .body {
-      max-width: 74%;
-      width: 100%;
-      padding: 0;
-      @media (max-width: 992px) {
-        max-width: 100%;
-      }
-    }
 
     .sidebar {
       padding: 0 0 0 27px;

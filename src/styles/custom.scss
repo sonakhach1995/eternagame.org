@@ -14,6 +14,7 @@
 .gray-header {
   font-weight: bold;
   color: $gray;
+  margin-top: 0.6875rem;
 }
 
 .card {
@@ -22,8 +23,8 @@
 
 .top-border {
   border-top-color: $light-blue;
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
+  margin-top: 1.65625rem;
+  margin-bottom: 1.65625rem;
 }
 
 .arrow_right {
@@ -37,7 +38,35 @@
 .page-content {
   border-radius: 0.3333333333333333rem;
   background-color: $med-dark-blue;
-  padding: 0.82rem;
+  padding: 1.5rem;
+
+  .content_img {
+    width: 20.875rem;
+    height: 22.8125rem;
+    background-color: #041227;
+    opacity: 0.8;
+    @media (max-width: 768px) {
+    width: 18.125rem;
+      height: 19.8125rem;
+    }
+    @media (max-width: 650px) {
+      width: 15.625rem;
+      height: 15.625rem;
+    }
+    @media (max-width: 450px) {
+      width: 11.875rem;
+      height: 12.5rem;
+    }
+    @media (max-width: 375px) {
+      width: 100%;
+    }
+  }
+
+  .second_content {
+    @media (max-width: 375px) {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 //login modal
