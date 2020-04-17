@@ -14,6 +14,7 @@
 .gray-header {
   font-weight: bold;
   color: $gray;
+  margin-top: 0.6875rem;
 }
 
 .card {
@@ -22,8 +23,8 @@
 
 .top-border {
   border-top-color: $light-blue;
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
+  margin-top: 1.65625rem;
+  margin-bottom: 1.65625rem;
 }
 
 .arrow_right {
@@ -37,5 +38,140 @@
 .page-content {
   border-radius: 0.3333333333333333rem;
   background-color: $med-dark-blue;
-  padding: 0.82rem;
+  padding: 1.5rem;
+
+  .content_img {
+    width: 20.875rem;
+    height: 22.8125rem;
+    background-color: #041227;
+    opacity: 0.8;
+    @media (max-width: 768px) {
+    width: 18.125rem;
+      height: 19.8125rem;
+    }
+    @media (max-width: 650px) {
+      width: 15.625rem;
+      height: 15.625rem;
+    }
+    @media (max-width: 450px) {
+      width: 11.875rem;
+      height: 12.5rem;
+    }
+    @media (max-width: 375px) {
+      width: 100%;
+    }
+  }
+
+  .second_content {
+    @media (max-width: 375px) {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+//login modal
+
+.login_modal {
+
+  .modal-header {
+    height: 2.5625rem;
+    -webkit-backdrop-filter: blur(1.875rem);
+    backdrop-filter: blur(1.875rem);
+    background-color: #4a90e2;
+    padding: 0.5625rem;
+
+    .modal-title {
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 1.38;
+      margin: 0 auto;
+      padding-left: 1.875rem;
+    }
+
+    .close {
+      opacity: 0.5;
+      color: var(--white);
+      margin-left: 0;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .modal-dialog {
+    max-width: 23.25rem;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    .modal-body {
+      padding: 0 2.1875rem;
+      margin-top: 1.5rem;
+
+      .login_modal_content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.8125rem;
+
+        .form-control {
+          width: 100%;
+          height: 2.6875rem;
+          margin: 0 auto 0.875rem;
+          border-radius: 0.3125rem;
+          opacity: 0.5;
+          border: solid 1px var(--white);
+          background-color: #000000;
+        }
+
+        .input_bg {
+          position: relative;
+        }
+
+        .input_bg {
+          span {
+            position: absolute;
+            top: 0.625rem;
+            right: 0.75rem;
+          }
+
+          .lock {
+            right: 1.0625rem;
+          }
+        }
+
+        .forgot-password {
+          text-align: end;
+        }
+
+        .submit-button {
+          width: 11.5625rem;
+          height: 2.6875rem;
+          margin: 0 auto 1.0625rem;
+          font-size: 1.125rem;
+          font-weight: bold;
+          line-height: 1.33;
+        }
+
+        .register_here {
+          text-align: center;
+        }
+
+        p {
+          font-size: 0.75rem;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
 }

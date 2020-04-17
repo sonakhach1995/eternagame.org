@@ -1,10 +1,13 @@
 <template>
   <EternaPage v-if="puzzle" :title="puzzle.title">
     <div class="page-content">
-      <div class="d-flex">
+      <div class="d-flex flex-column">
         <div>
           <h2>{{ $t('puzzle-view:main-header') }}</h2>
           <p>{{ puzzle.about }}</p>
+        </div>
+        <div class="second_content d-flex">
+        <div>
           <h3>{{ $t('puzzle-view:auxiliary-header-one') }}</h3>
           <p>{{ puzzle.science }}</p>
           <h3>{{ $t('puzzle-view:auxiliary-header-two') }}</h3>
@@ -14,25 +17,18 @@
         </div>
 
         <div style="text-align:center">
-          <div
-            :style="{
-              width: '22.2667rem',
-              height: '24.3333rem',
-              backgroundColor: '#041227',
-              opacity: '0.8',
-            }"
-          ></div>
+          <div class="content_img"></div>
           <b-button type="submit" variant="primary" class="submit-button">
             {{ $t('puzzle-view:main-action') }}
           </b-button>
         </div>
       </div>
-
+      </div>
       <hr class="top-border" />
 
       <h2>{{ $t('nav-bar:quests') }}</h2>
       <p>{{ $t('puzzle-view:quests-info') }}</p>
-      <div>
+      <div class="images">
         <img
           v-for="questImage in puzzle.quests"
           :key="questImage"
@@ -123,14 +119,27 @@
 </script>
 
 <style scoped lang="scss">
-  .quest-image {
-    margin: 15px;
+
+  .images {
+    @media (max-width: 500px) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .quest-image {
+      margin-right: 2.1875rem;
+      @media (max-width: 570px) {
+        margin: 0 0.625rem 0 0;
+      }
+    }
   }
+
   .submit-button {
-    margin-top: 15px;
+    margin: 1.0625rem 0 1.8125rem 0;
+    width: 9.8125rem;
   }
   h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: bold;
   }
   h3 {
@@ -139,8 +148,17 @@
     font-weight: bold;
   }
   p {
-    font-size: 17px;
+    font-size: 1.0625rem;
     line-height: 1.47;
+    @media (max-width: 650px) {
+      font-size: 0.75rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 0.5rem;
+    }
+    @media (max-width: 375px) {
+      font-size: 0.875rem;
+    }
   }
 
   .icon {
@@ -151,6 +169,7 @@
   }
 
   li {
-    margin-bottom: 20px;
+    margin-top: 1.375rem;
+    font-size: 1.0625rem;
   }
 </style>
