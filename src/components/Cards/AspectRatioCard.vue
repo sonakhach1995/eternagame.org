@@ -32,6 +32,13 @@
 <style lang="scss" scoped>
   .card {
     display: block;
+    position: unset;
+    border: none;
+    @media (max-width: 1000px) {
+      width: 71%;
+      margin: 0 auto;
+    }
+
     .before {
       width: 1px;
       margin-left: -1px;
@@ -52,6 +59,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    left: 0;
   }
 
   .scalable-container {

@@ -38,13 +38,29 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '@/styles/global.scss';
   .btn {
     display: inline-block;
     width: 48%;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   ::v-deep .card-body {
     padding: 0.75rem !important;
+    bottom: 0.9375rem;
+
+    .progress {
+      width: 96%;
+      margin: 0 auto;
+      background-color: #021e46;
+      border-radius: 0.3125rem;
+      height: 1.0625rem;
+
+      .progress-bar {
+        background-color: $med-blue;
+      }
+    }
   }
+
+
 </style>

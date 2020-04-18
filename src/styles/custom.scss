@@ -39,3 +39,18 @@
   background-color: $med-dark-blue;
   padding: 0.82rem;
 }
+
+/* In component it does not have an effect */
+.swiper-wrapper {
+   margin-bottom: 1.875rem;
+ }
+
+.swiper-pagination-bullet {
+  width: 0.625rem!important;
+  height: 0.625rem!important;
+  background-color: $white!important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #e5e5e5!important;
+}
